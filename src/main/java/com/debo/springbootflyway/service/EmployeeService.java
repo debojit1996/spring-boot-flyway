@@ -1,6 +1,7 @@
 package com.debo.springbootflyway.service;
 
 import com.debo.springbootflyway.dto.EmployeeNameDto;
+import com.debo.springbootflyway.dto.EmployeeWithoutEmailDto;
 import com.debo.springbootflyway.model.Employee;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -8,9 +9,9 @@ import reactor.core.publisher.Mono;
 public interface EmployeeService {
     Mono<Employee> createEmployee(Employee employee);
 
-    Flux<Employee> getAllEmployees();
+    Flux<EmployeeWithoutEmailDto> getAllEmployees();
 
-    Mono<Employee> getEmployeeById(Long id);
+    Mono<EmployeeWithoutEmailDto> getEmployeeById(Long id);
 
     Mono<Void> deleteEmployeeById(Long id);
 

@@ -14,7 +14,8 @@
 * Request body expected:
 ```
  {
-    "name": "Hello",
+    "firstname": "Hello",
+    "lastname": "World",
     "email": "hello@gmail.com"
  }
 ```
@@ -26,10 +27,10 @@
   * Delete employee by Id: http://localhost/employee/{id}
 
 * PATCH Endpoint
-  * Update employee name by Id: http://localhost/employee/{id} - Returns 404 if resource not found
+  * Update employee firstname by Id: http://localhost/employee/{id} - Returns 404 if resource not found
   * Expected request body:
   ```
   {
-    "name": "Hello"
+    "firstname": "Hello"
   }
   ```  

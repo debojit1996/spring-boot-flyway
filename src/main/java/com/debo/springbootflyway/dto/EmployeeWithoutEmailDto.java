@@ -6,10 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter @Setter
+@Getter
+@Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeNameDto {
+public class EmployeeWithoutEmailDto {
+    private Long id;
     private String firstname;
+    private String lastname;
 }

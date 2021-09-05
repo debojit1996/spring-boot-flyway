@@ -1,6 +1,7 @@
 package com.debo.springbootflyway.controller;
 
 import com.debo.springbootflyway.dto.EmployeeNameDto;
+import com.debo.springbootflyway.dto.EmployeeWithoutEmailDto;
 import com.debo.springbootflyway.model.Employee;
 import com.debo.springbootflyway.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -29,12 +30,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/all")
-    public Flux<Employee> getAllEmployees() {
+    public Flux<EmployeeWithoutEmailDto> getAllEmployees() {
         return this.employeeService.getAllEmployees();
     }
 
     @GetMapping("/{id}")
-    public Mono<ResponseEntity<Employee>> getEmployeeById(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<EmployeeWithoutEmailDto>> getEmployeeById(@PathVariable("id") Long id) {
         return this.employeeService.getEmployeeById(id)
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());

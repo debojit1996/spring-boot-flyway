@@ -5,7 +5,8 @@ drop table if exists Employee;
 
 create table employee (
         id bigint auto_increment,
-        name varchar(100),
-        email varchar(100),
+        firstname varchar(100) NOT NULL,
+        lastname varchar(100),
+        email varchar(100) UNIQUE,
         primary key (id)
 );
